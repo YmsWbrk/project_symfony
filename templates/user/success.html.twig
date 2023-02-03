@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Success{% endblock %}
+{% block javascripts %}
+<script>
+setTimeout(function() { 
+    document.location.href = "/" ;
+    }, 3000)
+</script>
+{% endblock %}
+{% block body %}
+<h1 class="text-center text-success mt-5">Votre profil à bien été suprimer</h1>
+<h2 class="text-center text-danger mt-5">Vous allez être rediriger !</h2>
+{% endblock %}

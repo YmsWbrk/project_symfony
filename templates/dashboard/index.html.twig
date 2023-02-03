@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">name</th>
+      <th scope="col">pseudo</th>
+      <th scope="col">role</th>
+    </tr>
+  </thead>
+{% for user in users  %}
+  <tbody>
+    <tr>
+      <th scope="row">{{ user.id }}</th>
+      <td>{{ user.email }}</td>
+      <td>{{ user.pseudo }}</td>
+      <td>{{ user.roles |json_encode() }}</td>
+    </tr>
+  </tbody>
+{% endfor  %}
+</table>
+{% endblock %}

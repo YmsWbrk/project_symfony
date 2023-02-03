@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ErrorContact{% endblock %}
+
+{% block body %}
+<div class="text-center">
+<h1 class="text-danger mt-5">Votre message n'a pu être envoyer</h1>
+<h2 class="text-danger mt-5">Réessayer avec une adresse mail valide !</h2>
+<a href="{{ path('app_contact', {'id': app.user.id}) }}"><button class="btn btn-lg btn-danger">Retour</button></a>
+</div>
+{% endblock %}

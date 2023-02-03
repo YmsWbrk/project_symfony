@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+{% if app.user %}
+  <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center title mt-5">Une Question?</h1>
+                <h6 class="text-center title mb-4">N'hésitez pas, nous nous ferons un plaisir de vous répondre dans les meilleurs délais.</h6>
+                <div class="jumbotron">
+                    <form action="" method="post" class="mt-4">
+                        <div class="form-group">
+                            <input type="hidden" type="hidden" name="name" value="{{ app.user.pseudo }}" class="form-control" id="name" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" name="email" value="{{ app.user.email }}" class="form-control" id="email" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="msg">Message</label>
+                            <textarea name="msg"  id="msg" class="form-control" rows="3" required></textarea>
+                        </div>
+                        <input type="submit" class="btn btn-success mt-3" value="Envoyer" name="submitForm" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="text-center">
+    <h1 class="text-danger mt-5">Veuillez vous connecter afin de contacter l'administrateur du site</h1>
+    <a href="{{ path('app_login') }}"><button class="btn btn-lg btn-danger mt-5">S'identifier</button></a>
+    </div>
+    {% endif %}
+{% endblock %}

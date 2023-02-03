@@ -1,0 +1,13 @@
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+{{ form_start(form) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.pseudo) }}
+        <p class="text-danger">
+        ! Pour valider les modification entrer votre mot de passe actuelle 
+        ou modifier le si besoin</p>
+        {{ form_row(form.password, {
+            label: 'Mot de passe :'
+        }) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

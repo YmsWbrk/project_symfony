@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SuccessContact{% endblock %}
+{% block javascripts %}
+<script>
+setTimeout(function() { 
+    document.location.href = "/" ;
+    }, 7000)
+</script>
+{% endblock %}
+{% block body %}
+<h1 class="text-success text-center mt-5">
+Votre message à été envoyer avec success
+</h1>
+{% endblock %}
